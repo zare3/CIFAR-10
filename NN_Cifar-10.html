@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <title>ELTENEIN_5</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost:8888/static/base/images/favicon.ico?v=4e6c6be5716444f7ac7b902e7f388939">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="ELTENEIN_5_files/jquery-ui.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+
+
+<script src="ELTENEIN_5_files/lua.js"></script><script type="text/javascript" src="ELTENEIN_5_files/MathJax.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+// MathJax disabled, set as null to distingish from *missing* MathJax,
+// where it will be undefined, and should prompt a dialog later.
+window.mathjax_url = "/mathjax/MathJax.js";
+</script>
+
+<link rel="stylesheet" href="ELTENEIN_5_files/bootstrap-tour.css" type="text/css">
+<link rel="stylesheet" href="ELTENEIN_5_files/codemirror.css">
+
+
+    <link rel="stylesheet" href="ELTENEIN_5_files/style.css" type="text/css">
+    
+
+<link rel="stylesheet" href="ELTENEIN_5_files/override.css" type="text/css">
+
+
+    <link rel="stylesheet" href="ELTENEIN_5_files/custom.css" type="text/css">
+    <script src="ELTENEIN_5_files/require.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      require.config({
+          baseUrl: '/static/',
+          paths: {
+            nbextensions : '/nbextensions',
+            underscore : '/static/components/underscore/underscore-min.js?v=b8e9105826a85e08ca3803667c44c7b2',
+            backbone : '/static/components/backbone/backbone-min.js?v=b4b736cd23ea6769bf12092d5a40a825',
+          },
+          shim: {
+            underscore: {
+              exports: '_'
+            },
+            backbone: {
+              deps: ["underscore", "jquery"],
+              exports: "Backbone"
+            }
+          }
+      });
+    </script>
+
+    
+    
+
+<script src="ELTENEIN_5_files/marked.js" data-requiremodule="components/marked/lib/marked" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/init.js" data-requiremodule="widgets/js/init" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/bootstrap-tour.js" data-requiremodule="components/bootstrap-tour/build/js/bootstrap-tour.min" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/widget_bool.js" data-requiremodule="widgets/js/widget_bool" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/widget_button.js" data-requiremodule="widgets/js/widget_button" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/widget_container.js" data-requiremodule="widgets/js/widget_container" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/widget_float.js" data-requiremodule="widgets/js/widget_float" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/widget_image.js" data-requiremodule="widgets/js/widget_image" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/widget_int.js" data-requiremodule="widgets/js/widget_int" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/widget_selection.js" data-requiremodule="widgets/js/widget_selection" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/widget_selectioncontainer.js" data-requiremodule="widgets/js/widget_selectioncontainer" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/widget_string.js" data-requiremodule="widgets/js/widget_string" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/widget.js" data-requiremodule="widgets/js/widget" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/manager.js" data-requiremodule="widgets/js/manager" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/underscore-min.js" data-requiremodule="underscore" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="ELTENEIN_5_files/backbone-min.js" data-requiremodule="backbone" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><link rel="stylesheet" type="text/css" href="ELTENEIN_5_files/custom_002.css"><style type="text/css">.MathJax_Display {text-align: center; margin: 0; position: relative; display: block; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; border: 0; padding: 0; margin: 0}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0 !important; padding: 0 !important; margin: 0 !important; vertical-align: 0 !important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap ! important}
+.MathJax img {display: inline ! important; float: none ! important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block; overflow: hidden; width: 1px; height: 60ex}
+.MathJax .MathJax_EmBox {display: block; overflow: hidden; width: 1px; height: 60em}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Blank; src: url('about:blank')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body data-project="/home/omar/Desktop/iTorch" data-base-url="/" data-notebook-name="ELTENEIN_5.ipynb" data-notebook-path="" class="notebook_app"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px none; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div style="display: none;" id="MathJax_Message"></div>
+
+<noscript>
+    <div id='noscript'>
+      IPython Notebook requires JavaScript.<br>
+      Please enable it to proceed.
+  </div>
+</noscript>
+
+<div style="display: block;" id="header" class="navbar navbar-static-top border-box-sizing">
+  <div class="navbar-inner navbar-nobg">
+    <div class="container">
+    <div id="ipython_notebook" class="nav brand pull-left"><a href="http://localhost:8888/tree/" alt="dashboard"><img src="ELTENEIN_5_files/ipynblogo.png" alt="IPython Notebook"></a></div>
+
+    
+
+      <span id="login_widget">
+        
+      </span>
+
+    
+
+    
+
+<span id="save_widget" class="nav pull-left">
+    <span class="" id="notebook_name">ELTENEIN_5</span>
+    <span id="checkpoint_status">Last Checkpoint: Nov 03 23:26</span>
+    <span id="autosave_status">(autosaved)</span>
+</span>
+
+
+    </div>
+  </div>
+</div>
+
+<div style="display: block;" class="border-box-sizing" id="site">
+
+
+<div id="menubar-container" class="container">
+<div class="border-box-sizing" id="menubar">
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+    <ul id="menus" class="nav">
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">File</a>
+            <ul id="file_menu" class="dropdown-menu">
+                <li id="new_notebook" title="Make a new notebook (Opens a new window)">
+                    <a href="#">New</a></li>
+                <li id="open_notebook" title="Opens a new window with the Dashboard view">
+                    <a href="#">Open...</a></li>
+                <!-- <hr/> -->
+                <li class="divider"></li>
+                <li id="copy_notebook" title="Open a copy of this notebook's contents and start a new kernel">
+                    <a href="#">Make a Copy...</a></li>
+                <li id="rename_notebook"><a href="#">Rename...</a></li>
+                <li id="save_checkpoint"><a href="#">Save and Checkpoint</a></li>
+                <!-- <hr/> -->
+                <li class="divider"></li>
+                <li id="restore_checkpoint" class="dropdown-submenu"><a href="#">Revert to Checkpoint</a>
+                  <ul class="dropdown-menu"><li><a href="#">Nov 03 23:26:54</a></li></ul>
+                </li>
+                <li class="divider"></li>
+                <li id="print_preview"><a href="#">Print Preview</a></li>
+                <li class="dropdown-submenu"><a href="#">Download as</a>
+                    <ul class="dropdown-menu">
+                        <li id="download_ipynb"><a href="#">IPython Notebook (.ipynb)</a></li>
+                        <li id="download_py"><a href="#">Python (.py)</a></li>
+                        <li id="download_html"><a href="#">HTML (.html)</a></li>
+                        <li id="download_rst"><a href="#">reST (.rst)</a></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li class="disabled" id="trust_notebook" title="Trust the output of this notebook">
+                    <a href="#">Trusted Notebook</a></li>
+                <li class="divider"></li>
+                <li id="kill_and_exit" title="Shutdown this notebook's kernel, and close this window">
+                    <a href="#">Close and halt</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Edit</a>
+            <ul id="edit_menu" class="dropdown-menu">
+                <li id="cut_cell"><a href="#">Cut Cell</a></li>
+                <li id="copy_cell"><a href="#">Copy Cell</a></li>
+                <li id="paste_cell_above" class="disabled"><a href="#">Paste Cell Above</a></li>
+                <li id="paste_cell_below" class="disabled"><a href="#">Paste Cell Below</a></li>
+                <li id="paste_cell_replace" class="disabled"><a href="#">Paste Cell &amp; Replace</a></li>
+                <li id="delete_cell"><a href="#">Delete Cell</a></li>
+                <li id="undelete_cell" class="disabled"><a href="#">Undo Delete Cell</a></li>
+                <li class="divider"></li>
+                <li id="split_cell"><a href="#">Split Cell</a></li>
+                <li id="merge_cell_above"><a href="#">Merge Cell Above</a></li>
+                <li id="merge_cell_below"><a href="#">Merge Cell Below</a></li>
+                <li class="divider"></li>
+                <li id="move_cell_up"><a href="#">Move Cell Up</a></li>
+                <li id="move_cell_down"><a href="#">Move Cell Down</a></li>
+                <li class="divider"></li>
+                <li id="edit_nb_metadata"><a href="#">Edit Notebook Metadata</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">View</a>
+            <ul id="view_menu" class="dropdown-menu">
+                <li id="toggle_header" title="Show/Hide the IPython Notebook logo and notebook title (above menu bar)">
+                    <a href="#">Toggle Header</a></li>
+                <li id="toggle_toolbar" title="Show/Hide the action icons (below menu bar)">
+                    <a href="#">Toggle Toolbar</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Insert</a>
+            <ul id="insert_menu" class="dropdown-menu">
+                <li id="insert_cell_above" title="Insert an empty Code cell above the currently active cell">
+                    <a href="#">Insert Cell Above</a></li>
+                <li id="insert_cell_below" title="Insert an empty Code cell below the currently active cell">
+                    <a href="#">Insert Cell Below</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Cell</a>
+            <ul id="cell_menu" class="dropdown-menu">
+                <li id="run_cell" title="Run this cell, and move cursor to the next one">
+                    <a href="#">Run</a></li>
+                <li id="run_cell_select_below" title="Run this cell, select below">
+                    <a href="#">Run and Select Below</a></li>
+                <li id="run_cell_insert_below" title="Run this cell, insert below">
+                    <a href="#">Run and Insert Below</a></li>
+                <li id="run_all_cells" title="Run all cells in the notebook">
+                    <a href="#">Run All</a></li>
+                <li id="run_all_cells_above" title="Run all cells above (but not including) this cell">
+                    <a href="#">Run All Above</a></li>
+                <li id="run_all_cells_below" title="Run this cell and all cells below it">
+                    <a href="#">Run All Below</a></li>
+                <li class="divider"></li>
+                <li id="change_cell_type" class="dropdown-submenu" title="All cells in the notebook have a cell type. By default, new cells are created as 'Code' cells">
+                    <a href="#">Cell Type</a>
+                    <ul class="dropdown-menu">
+                      <li id="to_code" title="Contents will be sent to the kernel for execution, and output will display in the footer of cell">
+                          <a href="#">Code</a></li>
+                      <li id="to_markdown" title="Contents will be rendered as HTML and serve as explanatory text">
+                          <a href="#">Markdown</a></li>
+                      <li id="to_raw" title="Contents will pass through nbconvert unmodified">
+                          <a href="#">Raw NBConvert</a></li>
+                      <li id="to_heading1"><a href="#">Heading 1</a></li>
+                      <li id="to_heading2"><a href="#">Heading 2</a></li>
+                      <li id="to_heading3"><a href="#">Heading 3</a></li>
+                      <li id="to_heading4"><a href="#">Heading 4</a></li>
+                      <li id="to_heading5"><a href="#">Heading 5</a></li>
+                      <li id="to_heading6"><a href="#">Heading 6</a></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li id="current_outputs" class="dropdown-submenu"><a href="#">Current Output</a>
+                    <ul class="dropdown-menu">
+                        <li id="toggle_current_output" title="Hide/Show the output of the current cell">
+                            <a href="#">Toggle</a>
+                        </li>
+                        <li id="toggle_current_output_scroll" title="Scroll the output of the current cell">
+                            <a href="#">Toggle Scrolling</a>
+                        </li>
+                        <li id="clear_current_output" title="Clear the output of the current cell">
+                            <a href="#">Clear</a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="all_outputs" class="dropdown-submenu"><a href="#">All Output</a>
+                    <ul class="dropdown-menu">
+                        <li id="toggle_all_output" title="Hide/Show the output of all cells">
+                            <a href="#">Toggle</a>
+                        </li>
+                        <li id="toggle_all_output_scroll" title="Scroll the output of all cells">
+                            <a href="#">Toggle Scrolling</a>
+                        </li>
+                        <li id="clear_all_output" title="Clear the output of all cells">
+                            <a href="#">Clear</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Kernel</a>
+            <ul id="kernel_menu" class="dropdown-menu">
+                <li id="int_kernel" title="Send KeyboardInterrupt (CTRL-C) to the Kernel">
+                    <a href="#">Interrupt</a></li>
+                <li id="restart_kernel" title="Restart the Kernel">
+                    <a href="#">Restart</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Help</a>
+            <ul id="help_menu" class="dropdown-menu">
+                <li id="notebook_tour" title="A quick tour of the notebook user interface"><a href="#">User Interface Tour</a></li>
+                <li id="keyboard_shortcuts" title="Opens a tooltip with all keyboard shortcuts"><a href="#">Keyboard Shortcuts</a></li>
+                <li class="divider"></li>
+                
+
+                
+                    
+                        <li><a href="http://ipython.org/documentation.html" target="_blank" title="Opens in a new window">
+                        <i class="icon-external-link menu-icon pull-right"></i>
+                        IPython Help
+                        </a></li>
+                    
+                        <li><a href="http://nbviewer.ipython.org/github/ipython/ipython/tree/2.x/examples/Index.ipynb" target="_blank" title="Opens in a new window">
+                        <i class="icon-external-link menu-icon pull-right"></i>
+                        Notebook Help
+                        </a></li>
+                    
+                    
+                        <li class="divider"></li>
+                    
+                
+                    
+                        <li><a href="http://docs.python.org/" target="_blank" title="Opens in a new window">
+                        <i class="icon-external-link menu-icon pull-right"></i>
+                        Python
+                        </a></li>
+                    
+                        <li><a href="http://help.github.com/articles/github-flavored-markdown" target="_blank" title="Opens in a new window">
+                        <i class="icon-external-link menu-icon pull-right"></i>
+                        Markdown
+                        </a></li>
+                    
+                        <li><a href="http://docs.scipy.org/doc/numpy/reference/" target="_blank" title="Opens in a new window">
+                        <i class="icon-external-link menu-icon pull-right"></i>
+                        NumPy
+                        </a></li>
+                    
+                        <li><a href="http://docs.scipy.org/doc/scipy/reference/" target="_blank" title="Opens in a new window">
+                        <i class="icon-external-link menu-icon pull-right"></i>
+                        SciPy
+                        </a></li>
+                    
+                        <li><a href="http://matplotlib.org/contents.html" target="_blank" title="Opens in a new window">
+                        <i class="icon-external-link menu-icon pull-right"></i>
+                        Matplotlib
+                        </a></li>
+                    
+                        <li><a href="http://docs.sympy.org/latest/index.html" target="_blank" title="Opens in a new window">
+                        <i class="icon-external-link menu-icon pull-right"></i>
+                        SymPy
+                        </a></li>
+                    
+                        <li><a href="http://pandas.pydata.org/pandas-docs/stable/" target="_blank" title="Opens in a new window">
+                        <i class="icon-external-link menu-icon pull-right"></i>
+                        pandas
+                        </a></li>
+                    
+                    
+                
+                
+            </ul>
+        </li>
+    </ul>
+    <div id="kernel_indicator" class="indicator_area pull-right">
+       <i title="Kernel Idle" class="kernel_idle_icon" id="kernel_indicator_icon"></i>
+    </div>
+    <div id="modal_indicator" class="indicator_area pull-right">
+       <i title="Command Mode" class="command_mode_icon" id="modal_indicator_icon"></i>
+    </div>
+    <div id="notification_area"><div style="display: none;" class="notification_widget pull-right border-box-sizing" id="notification_kernel"><span></span></div><div style="display: none;" class="notification_widget pull-right border-box-sizing" id="notification_notebook"><span></span></div></div>
+    </div>
+  </div>
+</div>
+</div>
+<div id="maintoolbar" class="navbar">
+  <div class="toolbar-inner navbar-inner navbar-nobg">
+    <div id="maintoolbar-container" class="container border-box-sizing toolbar"><div class="btn-group"><button id="save_b" title="Save and Checkpoint" class="btn"><i class="icon-save"></i></button></div><div id="insert_above_below" class="btn-group"><button id="insert_below_b" title="Insert Cell Below" class="btn"><i class="icon-plus-sign"></i></button></div><div id="cut_copy_paste" class="btn-group"><button id="cut_b" title="Cut Cell" class="btn"><i class="icon-cut"></i></button><button id="copy_b" title="Copy Cell" class="btn"><i class="icon-copy"></i></button><button id="paste_b" title="Paste Cell Below" class="btn"><i class="icon-paste"></i></button></div><div id="move_up_down" class="btn-group"><button id="move_up_b" title="Move Cell Up" class="btn"><i class="icon-arrow-up"></i></button><button id="move_down_b" title="Move Cell Down" class="btn"><i class="icon-arrow-down"></i></button></div><div id="run_int" class="btn-group"><button id="run_b" title="Run Cell" class="btn"><i class="icon-play"></i></button><button id="interrupt_b" title="Interrupt" class="btn"><i class="icon-stop"></i></button><button id="repeat_b" title="Restart Kernel" class="btn"><i class="icon-repeat"></i></button></div><select id="cell_type"><option selected="selected" value="code">Code</option><option value="markdown">Markdown</option><option value="raw">Raw NBConvert</option><option value="heading1">Heading 1</option><option value="heading2">Heading 2</option><option value="heading3">Heading 3</option><option value="heading4">Heading 4</option><option value="heading5">Heading 5</option><option value="heading6">Heading 6</option></select><span class="navbar-text">Cell Toolbar:</span><select id="ctb_select"><option selected="selected" value="">None</option><option value="Edit Metadata">Edit Metadata</option><option value="Raw Cell Format">Raw Cell Format</option><option value="Slideshow">Slideshow</option></select></div>
+  </div>
+</div>
+</div>
+
+<div style="height: 869px;" class="border-box-sizing" id="ipython-main-app">
+
+    <div class="border-box-sizing" id="notebook_panel">
+        <div style="height: 861px;" tabindex="-1" class="border-box-sizing" id="notebook"><div id="notebook-container" class="container"><div tabindex="2" class="cell border-box-sizing code_cell rendered command_mode unselected"><div class="input"><div class="prompt input_prompt">In&nbsp;[1]:</div><div class="inner_cell"><div class="ctb_hideshow ctb_show"><div class="celltoolbar"></div></div><div class="input_area"><div class="CodeMirror cm-s-ipython"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 90.6001px; left: 5.59998px;"><textarea tabindex="0" spellcheck="false" autocapitalize="off" autocorrect="off" wrap="off" style="position: absolute; padding: 0px; width: 1px; height: 1em; outline: medium none;"></textarea></div><div style="left: 0px;" class="CodeMirror-hscrollbar"><div style="height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div draggable="true" tabindex="-1" class="CodeMirror-scroll"><div style="min-width: 139px; margin-left: 0px; min-height: 113px;" class="CodeMirror-sizer"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: medium none;"><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1; display: none;"></div><div style="" class="CodeMirror-code"><pre>require 'cutorch'</pre><pre>require 'nn'</pre><pre>require 'cunn'</pre><pre>require 'cudnn'</pre><pre>require 'image'</pre><pre>&nbsp;</pre></div><div style="left: 0px; top: 85px; height: 17px; visibility: hidden;" class="CodeMirror-cursor">&nbsp;</div><div style="display: none; visibility: hidden;" class="CodeMirror-cursor CodeMirror-secondarycursor">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 113px;"></div><div style="display: none; height: 113px;" class="CodeMirror-gutters"></div></div></div></div></div></div><div style="display: none;" class="widget-area"><div class="prompt"><button class="close">×</button></div><div class="widget-subarea"></div></div><div class="output_wrapper"><div title="click to scroll output; double click to hide" class="out_prompt_overlay prompt" style=""></div><div style="" class="output"></div><div title="click to expand output" class="btn output_collapsed" style="display: none;">. . .</div></div></div><div tabindex="2" class="cell border-box-sizing code_cell command_mode rendered unselected"><div class="input"><div class="prompt input_prompt">In&nbsp;[2]:</div><div class="inner_cell"><div class="ctb_hideshow ctb_show"><div class="celltoolbar"></div></div><div class="input_area"><div class="CodeMirror cm-s-ipython"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 5.59961px; left: 5.59998px;"><textarea tabindex="0" spellcheck="false" autocapitalize="off" autocorrect="off" wrap="off" style="position: absolute; padding: 0px; width: 1px; height: 1em; outline: medium none;"></textarea></div><div style="left: 0px;" class="CodeMirror-hscrollbar"><div style="height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div draggable="true" tabindex="-1" class="CodeMirror-scroll"><div style="min-width: 883px; margin-left: 0px; min-height: 946px;" class="CodeMirror-sizer"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: medium none;"><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1; display: none;"></div><div style="" class="CodeMirror-code"><pre>-- trainset = torch.load('/home/omar/Desktop/cifar10-train.t7')</pre><pre>-- testset = torch.load('/home/omar/Desktop/cifar10-test.t7')</pre><pre>-- classes = {'airplane', 'automobile', 'bird', 'cat',</pre><pre>--           'deer', 'dog', 'frog', 'horse', 'ship', 'truck'}</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>local trsize = 50000</pre><pre>local tesize = 10000</pre><pre>&nbsp;</pre><pre>-- load dataset</pre><pre>trainset = {</pre><pre>    data = torch.Tensor(50000, 3 * 32 * 32),</pre><pre>    labels = torch.Tensor(50000),</pre><pre>    size = function() return trsize end</pre><pre>}</pre><pre>for i = 0,4 do</pre><pre>    local subset = torch.load('/home/omar/Desktop/cifar-10-batches-t7/data_batch_' .. (i+1) .. '.t7', 'ascii')</pre><pre>    trainset.data[{ {i*10000+1, (i+1)*10000} }] = subset.data:t()</pre><pre>    trainset.labels[{ {i*10000+1, (i+1)*10000} }] = subset.labels</pre><pre>end</pre><pre>trainset.labels = trainset.labels + 1</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>subset = torch.load('/home/omar/Desktop/cifar-10-batches-t7/test_batch.t7', 'ascii')</pre><pre>testset = {</pre><pre>    data = subset.data:t():double(),</pre><pre>    labels = subset.labels[1]:double(),</pre><pre>    size = function() return tesize end</pre><pre>}</pre><pre>testset.labels = testset.labels + 1</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>-- resize dataset (if using small version)</pre><pre>trainset.data = trainset.data[{ {1,trsize} }]</pre><pre>trainset.labels = trainset.labels[{ {1,trsize} }]</pre><pre>testset.data = testset.data[{ {1,tesize} }]</pre><pre>testset.labels = testset.labels[{ {1,tesize} }]</pre><pre>-- reshape data</pre><pre>trainset.data = trainset.data:reshape(trsize,3,32,32)</pre><pre>testset.data = testset.data:reshape(tesize,3,32,32)</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>print('Training Data:')</pre><pre>print(trainset)</pre><pre>print()</pre><pre>print('Test Data:')</pre><pre>print(testset)</pre><pre>print()</pre></div><div style="left: 0px; top: 0px; height: 17px;" class="CodeMirror-cursor">&nbsp;</div><div style="display: none;" class="CodeMirror-cursor CodeMirror-secondarycursor">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 946px;"></div><div style="display: none; height: 946px;" class="CodeMirror-gutters"></div></div></div></div></div></div><div style="display: none;" class="widget-area"><div class="prompt"><button class="close">×</button></div><div class="widget-subarea"></div></div><div class="output_wrapper"><div title="click to scroll output; double click to hide" class="out_prompt_overlay prompt" style=""></div><div style="" class="output"><div class="output_area"><div class="prompt output_prompt">Out[2]:</div><div class="output_subarea output_text output_pyout"><pre>Training Data:	
+{
+  data : DoubleTensor - size: 50000x3x32x32
+  size : function: 0x4083e868
+  labels : DoubleTensor - size: 50000
+}
+
+Test Data:	
+{
+  data : DoubleTensor - size: 10000x3x32x32
+  size : function: 0x40842710
+  labels : DoubleTensor - size: 10000
+}
+
+</pre></div></div></div><div title="click to expand output" class="btn output_collapsed" style="display: none;">. . .</div></div></div><div tabindex="2" class="cell border-box-sizing code_cell command_mode rendered unselected"><div class="input"><div class="prompt input_prompt">In&nbsp;[3]:</div><div class="inner_cell"><div class="ctb_hideshow ctb_show"><div class="celltoolbar"></div></div><div class="input_area"><div class="CodeMirror cm-s-ipython"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 5.6001px; left: 5.59998px;"><textarea tabindex="0" spellcheck="false" autocapitalize="off" autocorrect="off" wrap="off" style="position: absolute; padding: 0px; width: 1px; height: 1em; outline: medium none;"></textarea></div><div style="left: 0px;" class="CodeMirror-hscrollbar"><div style="height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div draggable="true" tabindex="-1" class="CodeMirror-scroll"><div style="min-width: 883px; margin-left: 0px; min-height: 470px;" class="CodeMirror-sizer"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: medium none;"><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1; display: none;"></div><div style="" class="CodeMirror-code"><pre>-- ignore setmetatable for now, it is a feature beyond the scope of this tutorial. It sets the index operator.</pre><pre>setmetatable(trainset, </pre><pre>    {__index = function(t, i) </pre><pre>                    return {t.data[i], t.labels[i]} </pre><pre>                end}</pre><pre>);</pre><pre>trainset.data = trainset.data:double() -- convert the data from a ByteTensor to a DoubleTensor.</pre><pre>&nbsp;</pre><pre>function trainset:size() </pre><pre>    return self.data:size(1) </pre><pre>end</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><pre>-- ignore setmetatable for now, it is a feature beyond the scope of this tutorial. It sets the index operator.</pre><pre>setmetatable(testset, </pre><pre>    {__index = function(t, i) </pre><pre>                    return {t.data[i], t.labels[i]} </pre><pre>                end}</pre><pre>);</pre><pre>testset.data = testset.data:double() -- convert the data from a ByteTensor to a DoubleTensor.</pre><pre>&nbsp;</pre><pre>function testset:size() </pre><pre>    return self.data:size(1) </pre><pre>end</pre></div><div style="left: 0px; top: 0px; height: 17px;" class="CodeMirror-cursor">&nbsp;</div><div style="display: none;" class="CodeMirror-cursor CodeMirror-secondarycursor">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 470px;"></div><div style="display: none; height: 470px;" class="CodeMirror-gutters"></div></div></div></div></div></div><div style="display: none;" class="widget-area"><div class="prompt"><button class="close">×</button></div><div class="widget-subarea"></div></div><div class="output_wrapper"><div title="click to scroll output; double click to hide" class="out_prompt_overlay prompt" style=""></div><div style="" class="output"></div><div title="click to expand output" class="btn output_collapsed" style="display: none;">. . .</div></div></div><div tabindex="2" class="cell border-box-sizing code_cell rendered command_mode unselected"><div class="input"><div class="prompt input_prompt">In&nbsp;[4]:</div><div class="inner_cell"><div class="ctb_hideshow ctb_show"><div class="celltoolbar"></div></div><div class="input_area"><div class="CodeMirror cm-s-ipython"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 141.6px; left: 29.6px;"><textarea tabindex="0" spellcheck="false" autocapitalize="off" autocorrect="off" wrap="off" style="position: absolute; padding: 0px; width: 1px; height: 1em; outline: medium none;">for i = 1,trainset:size() do
+    -- rgb -&gt; yuv
+    trainset.data[i] = image.rgb2yuv(trainset.data[i])
+end
+
+for i = 1,testset:size() do
+    -- rgb -&gt; yuv
+    testset.data[i] = image.rgb2yuv(testset.data[i])
+end</textarea></div><div style="left: 0px;" class="CodeMirror-hscrollbar"><div style="height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div draggable="true" tabindex="-1" class="CodeMirror-scroll"><div style="min-width: 435px; margin-left: 0px; min-height: 164px;" class="CodeMirror-sizer"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: medium none;"><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"><div style="position: absolute; left: 0px; top: 0px; width: 1051px; height: 17px;" class="CodeMirror-selected"></div><div style="position: absolute; left: 0px; top: 136px; width: 24px; height: 17px;" class="CodeMirror-selected"></div><div style="position: absolute; left: 0px; top: 17px; width: 1051px; height: 119px;" class="CodeMirror-selected"></div></div><div style="" class="CodeMirror-code"><pre>for i = 1,trainset:size() do</pre><pre>    -- rgb -&gt; yuv</pre><pre>    trainset.data[i] = image.rgb2yuv(trainset.data[i])</pre><pre>end</pre><pre>&nbsp;</pre><pre>for i = 1,testset:size() do</pre><pre>    -- rgb -&gt; yuv</pre><pre>    testset.data[i] = image.rgb2yuv(testset.data[i])</pre><pre>end</pre></div><div style="left: 24px; top: 51px; height: 17px; display: none;" class="CodeMirror-cursor">&nbsp;</div><div style="display: none;" class="CodeMirror-cursor CodeMirror-secondarycursor">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 164px;"></div><div style="display: none; height: 164px;" class="CodeMirror-gutters"></div></div></div></div></div></div><div style="display: none;" class="widget-area"><div class="prompt"><button class="close">×</button></div><div class="widget-subarea"></div></div><div class="output_wrapper"><div title="click to scroll output; double click to hide" class="out_prompt_overlay prompt" style=""></div><div style="" class="output"></div><div title="click to expand output" class="btn output_collapsed" style="display: none;">. . .</div></div></div><div tabindex="2" class="cell border-box-sizing code_cell command_mode rendered unselected"><div class="input"><div class="prompt input_prompt">In&nbsp;[5]:</div><div class="inner_cell"><div class="ctb_hideshow ctb_show"><div class="celltoolbar"></div></div><div class="input_area"><div class="CodeMirror cm-s-ipython"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 5.6001px; left: 5.59998px;"><textarea tabindex="0" spellcheck="false" autocapitalize="off" autocorrect="off" wrap="off" style="position: absolute; padding: 0px; width: 1px; height: 1em; outline: medium none;"></textarea></div><div style="left: 0px;" class="CodeMirror-hscrollbar"><div style="height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div draggable="true" tabindex="-1" class="CodeMirror-scroll"><div style="min-width: 371px; margin-left: 0px; min-height: 96px;" class="CodeMirror-sizer"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: medium none;"><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1; display: none;"></div><div style="" class="CodeMirror-code"><pre>-- print (trainset)</pre><pre>itorch.image(trainset.data[10000])</pre><pre>itorch.image(trainset.data[8725])</pre><pre>itorch.image(trainset.data[1065])</pre><pre>itorch.image(trainset.data[{ {40000,40003} }])</pre></div><div style="left: 0px; top: 0px; height: 17px;" class="CodeMirror-cursor">&nbsp;</div><div style="display: none;" class="CodeMirror-cursor CodeMirror-secondarycursor">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 96px;"></div><div style="display: none; height: 96px;" class="CodeMirror-gutters"></div></div></div></div></div></div><div style="display: none;" class="widget-area"><div class="prompt"><button class="close">×</button></div><div class="widget-subarea"></div></div><div class="output_wrapper"><div title="click to scroll output; double click to hide" class="out_prompt_overlay prompt" style=""></div><div style="" class="output"><div class="output_area"><div class="prompt"></div><div class="output_subarea output_png"><div class="ui-wrapper ui-resizable-autohide" style="overflow: hidden; position: relative; width: 32px; height: 32px; top: 0px; left: 0px; margin: 0px;"><img style="resize: none; position: static; display: block; height: 32px; width: 32px;" class="ui-resizable" src="data:image/png;base64,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" height="32" width="32"><div style="z-index: 90; display: none;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90; display: none;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90; display: none;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div></div></div><div class="output_area"><div class="prompt"></div><div class="output_subarea output_png"><div class="ui-wrapper ui-resizable-autohide" style="overflow: hidden; position: relative; width: 32px; height: 32px; top: 0px; left: 0px; margin: 0px;"><img style="resize: none; position: static; display: block; height: 32px; width: 32px;" class="ui-resizable" src="data:image/png;base64,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" height="32" width="32"><div style="z-index: 90; display: none;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90; display: none;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90; display: none;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div></div></div><div class="output_area"><div class="prompt"></div><div class="output_subarea output_png"><div class="ui-wrapper ui-resizable-autohide" style="overflow: hidden; position: relative; width: 32px; height: 32px; top: 0px; left: 0px; margin: 0px;"><img style="resize: none; position: static; display: block; height: 32px; width: 32px;" class="ui-resizable" src="data:image/png;base64,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" height="32" width="32"><div style="z-index: 90; display: none;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90; display: none;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90; display: none;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div></div></div><div class="output_area"><div class="prompt"></div><div class="output_subarea output_png"><div class="ui-wrapper ui-resizable-autohide" style="overflow: hidden; position: relative; width: 136px; height: 34px; top: 0px; left: 0px; margin: 0px;"><img style="resize: none; position: static; display: block; height: 34px; width: 136px;" class="ui-resizable" src="data:image/png;base64,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" height="34" width="136"><div style="z-index: 90; display: none;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90; display: none;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90; display: none;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div></div></div></div><div title="click to expand output" class="btn output_collapsed" style="display: none;">. . .</div></div></div><div tabindex="2" class="cell border-box-sizing code_cell command_mode rendered unselected"><div class="input"><div class="prompt input_prompt">In&nbsp;[6]:</div><div class="inner_cell"><div class="ctb_hideshow ctb_show"><div class="celltoolbar"></div></div><div class="input_area"><div class="CodeMirror cm-s-ipython"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 5.6001px; left: 5.59998px;"><textarea tabindex="0" spellcheck="false" autocapitalize="off" autocorrect="off" wrap="off" style="position: absolute; padding: 0px; width: 1px; height: 1em; outline: medium none;"></textarea></div><div style="left: 0px;" class="CodeMirror-hscrollbar"><div style="height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div draggable="true" tabindex="-1" class="CodeMirror-scroll"><div style="min-width: 603px; margin-left: 0px; min-height: 198px;" class="CodeMirror-sizer"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: medium none;"><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1; display: none;"></div><div style="" class="CodeMirror-code"><pre>mean = {} -- store the mean, to normalize the test set in the future</pre><pre>stdv  = {} -- store the standard-deviation for the future</pre><pre>for i=1,3 do -- over each image channel</pre><pre>    mean[i] = trainset.data[{ {}, {i}, {}, {}  }]:mean() -- mean estimation</pre><pre>    print('Channel ' .. i .. ', Mean: ' .. mean[i])</pre><pre>    trainset.data[{ {}, {i}, {}, {}  }]:add(-mean[i]) -- mean subtraction</pre><pre>    </pre><pre>    stdv[i] = trainset.data[{ {}, {i}, {}, {}  }]:std() -- std estimation</pre><pre>    print('Channel ' .. i .. ', Standard Deviation: ' .. stdv[i])</pre><pre>    trainset.data[{ {}, {i}, {}, {}  }]:div(stdv[i]) -- std scaling</pre><pre>end</pre></div><div style="left: 0px; top: 0px; height: 17px;" class="CodeMirror-cursor">&nbsp;</div><div style="display: none;" class="CodeMirror-cursor CodeMirror-secondarycursor">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 198px;"></div><div style="display: none; height: 198px;" class="CodeMirror-gutters"></div></div></div></div></div></div><div style="display: none;" class="widget-area"><div class="prompt"><button class="close">×</button></div><div class="widget-subarea"></div></div><div class="output_wrapper"><div title="click to scroll output; double click to hide" class="out_prompt_overlay prompt" style=""></div><div style="" class="output"><div class="output_area"><div class="prompt output_prompt">Out[6]:</div><div class="output_subarea output_text output_pyout"><pre>Channel 1, Mean: 122.61930353943	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[6]:</div><div class="output_subarea output_text output_pyout"><pre>Channel 1, Standard Deviation: 60.992137196504	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[6]:</div><div class="output_subarea output_text output_pyout"><pre>Channel 2, Mean: -4.3065506356254	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[6]:</div><div class="output_subarea output_text output_pyout"><pre>Channel 2, Standard Deviation: 13.663213704239	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[6]:</div><div class="output_subarea output_text output_pyout"><pre>Channel 3, Mean: 2.3578541481531	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[6]:</div><div class="output_subarea output_text output_pyout"><pre>Channel 3, Standard Deviation: 17.067521638108	
+</pre></div></div></div><div title="click to expand output" class="btn output_collapsed" style="display: none;">. . .</div></div></div><div tabindex="2" class="cell border-box-sizing code_cell command_mode rendered unselected"><div class="input"><div class="prompt input_prompt">In&nbsp;[7]:</div><div class="inner_cell"><div class="ctb_hideshow ctb_show"><div class="celltoolbar"></div></div><div class="input_area"><div class="CodeMirror cm-s-ipython"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 5.59998px; left: 5.59998px;"><textarea tabindex="0" spellcheck="false" autocapitalize="off" autocorrect="off" wrap="off" style="position: absolute; padding: 0px; width: 1px; height: 1em; outline: medium none;"></textarea></div><div style="left: 0px;" class="CodeMirror-hscrollbar"><div style="height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div draggable="true" tabindex="-1" class="CodeMirror-scroll"><div style="min-width: 667px; margin-left: 0px; min-height: 96px;" class="CodeMirror-sizer"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: medium none;"><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1; display: none;"></div><div style="" class="CodeMirror-code"><pre>testset.data = testset.data:double()   -- convert from Byte tensor to Double tensor</pre><pre>for i=1,3 do -- over each image channel</pre><pre>    testset.data[{ {}, {i}, {}, {}  }]:add(-mean[i]) -- mean subtraction    </pre><pre>    testset.data[{ {}, {i}, {}, {}  }]:div(stdv[i]) -- std scaling</pre><pre>end</pre></div><div style="left: 0px; top: 0px; height: 17px;" class="CodeMirror-cursor">&nbsp;</div><div style="display: none;" class="CodeMirror-cursor CodeMirror-secondarycursor">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 96px;"></div><div style="display: none; height: 96px;" class="CodeMirror-gutters"></div></div></div></div></div></div><div style="display: none;" class="widget-area"><div class="prompt"><button class="close">×</button></div><div class="widget-subarea"></div></div><div class="output_wrapper"><div title="click to scroll output; double click to hide" class="out_prompt_overlay prompt" style=""></div><div style="" class="output"></div><div title="click to expand output" class="btn output_collapsed" style="display: none;">. . .</div></div></div><div tabindex="2" class="cell border-box-sizing code_cell rendered command_mode unselected"><div class="input"><div class="prompt input_prompt">In&nbsp;[8]:</div><div class="inner_cell"><div class="ctb_hideshow ctb_show"><div class="celltoolbar"></div></div><div class="input_area"><div class="CodeMirror cm-s-ipython"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 56.6px; left: 85.6px;"><textarea tabindex="0" spellcheck="false" autocapitalize="off" autocorrect="off" wrap="off" style="position: absolute; padding: 0px; width: 1px; height: 1em; outline: medium none;">d(cudnn.ReLU(true))</textarea></div><div style="left: 0px; display: block; right: 0px;" class="CodeMirror-hscrollbar"><div style="height: 1px; width: 1091px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div draggable="true" tabindex="-1" class="CodeMirror-scroll"><div style="min-width: 1091px; margin-left: 0px; min-height: 589px;" class="CodeMirror-sizer"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: medium none;"><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"><div style="position: absolute; left: 80px; top: 51px; width: 152px; height: 17px;" class="CodeMirror-selected"></div></div><div style="" class="CodeMirror-code"><pre>net = nn.Sequential()</pre><pre>    net:add(cudnn.SpatialConvolution(3, 64, 3, 3, 1, 1, 1, 1)) -- 3 input image channels, 64 output channels, 3x3 convolution kernel\n",</pre><pre>    net:add(nn.Dropout(0.3))</pre><pre>    net:add(cudnn.ReLU(true))</pre><pre>    net:add(cudnn.SpatialConvolution(64, 64, 3, 3, 1, 1, 1, 1))</pre><pre>    net:add(cudnn.ReLU(true))</pre><pre>net:add(cudnn.SpatialMaxPooling(2,2,2,2))     -- A max-pooling operation that looks at 2x2 windows and finds the max.\n",</pre><pre>    </pre><pre>    -- 64 x 16 x 16</pre><pre>    </pre><pre>    net:add(cudnn.SpatialConvolution(64, 128, 3, 3, 1, 1, 1, 1))</pre><pre>    net:add(cudnn.ReLU(true))</pre><pre>    net:add(nn.Dropout(0.4))</pre><pre>    net:add(cudnn.SpatialConvolution(128, 128, 3, 3, 1, 1, 1, 1))</pre><pre>    net:add(cudnn.ReLU(true))</pre><pre>    net:add(cudnn.SpatialMaxPooling(2,2,2,2))</pre><pre>    -- 128*8*8</pre><pre>    </pre><pre>    net:add(cudnn.SpatialConvolution(128, 256, 3, 3, 1, 1, 1, 1))</pre><pre>    net:add(cudnn.ReLU(true))</pre><pre>    net:add(nn.Dropout(0.4))</pre><pre>    net:add(cudnn.SpatialConvolution(256, 256, 3, 3, 1, 1, 1, 1))</pre><pre>    net:add(cudnn.ReLU(true))</pre><pre>    net:add(cudnn.SpatialMaxPooling(4,4,4,4))</pre><pre>    </pre><pre>    -- 256*2*2</pre><pre>    </pre><pre>    net:add(nn.View(256*2*2))</pre><pre>    net:add(nn.Dropout(0.5))</pre><pre>    net:add(nn.Linear(256*2*2, 256))             -- fully connected layer (matrix multiplication between input and weights)\n",</pre><pre>    net:add(cudnn.ReLU(true))</pre><pre>    net:add(nn.Dropout(0.5))</pre><pre>    net:add(nn.Linear(256, 10))                  -- 10 is the number of outputs of the network (in this case, 10 digits)\n",</pre><pre>    net:add(nn.LogSoftMax())                     -- converts the output to a log-probability. Useful for classification problems"</pre></div><div style="left: 232px; top: 51px; height: 17px; display: none; visibility: hidden;" class="CodeMirror-cursor">&nbsp;</div><div style="display: none; visibility: hidden;" class="CodeMirror-cursor CodeMirror-secondarycursor">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 589px;"></div><div style="display: none; height: 589px;" class="CodeMirror-gutters"></div></div></div></div></div></div><div style="display: none;" class="widget-area"><div class="prompt"><button class="close">×</button></div><div class="widget-subarea"></div></div><div class="output_wrapper"><div title="click to scroll output; double click to hide" class="out_prompt_overlay prompt" style=""></div><div style="" class="output"></div><div title="click to expand output" class="btn output_collapsed" style="display: none;">. . .</div></div></div><div tabindex="2" class="cell border-box-sizing code_cell command_mode rendered selected"><div class="input"><div class="prompt input_prompt">In&nbsp;[9]:</div><div class="inner_cell"><div class="ctb_hideshow ctb_show"><div class="celltoolbar"></div></div><div class="input_area"><div class="CodeMirror cm-s-ipython"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 5.60001px; left: 5.59998px;"><textarea tabindex="0" spellcheck="false" autocapitalize="off" autocorrect="off" wrap="off" style="position: absolute; padding: 0px; width: 1px; height: 1em; outline: medium none;"></textarea></div><div style="left: 0px;" class="CodeMirror-hscrollbar"><div style="height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div draggable="true" tabindex="-1" class="CodeMirror-scroll"><div style="min-width: 475px; margin-left: 0px; min-height: 147px;" class="CodeMirror-sizer"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: medium none;"><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1; display: none;"></div><div style="" class="CodeMirror-code"><pre>criterion = nn.ClassNLLCriterion()</pre><pre>net = net:cuda()</pre><pre>criterion = criterion:cuda()</pre><pre>trainset.data = trainset.data:cuda()</pre><pre>trainer = nn.StochasticGradient(net, criterion)</pre><pre>trainer.learningRate = 0.001</pre><pre>trainer.maxIteration = 50 -- just do 30 epochs of training.</pre><pre>trainer:train(trainset)</pre></div><div style="left: 0px; top: 0px; height: 17px;" class="CodeMirror-cursor">&nbsp;</div><div style="display: none;" class="CodeMirror-cursor CodeMirror-secondarycursor">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 147px;"></div><div style="display: none; height: 147px;" class="CodeMirror-gutters"></div></div></div></div></div></div><div style="display: none;" class="widget-area"><div class="prompt"><button class="close">×</button></div><div class="widget-subarea"></div></div><div class="output_wrapper"><div title="click to scroll output; double click to hide" class="out_prompt_overlay prompt" style=""></div><div style="" class="output"><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># StochasticGradient: training	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 2.0583485699153	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 1.6835923739052	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 1.4657709204316	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 1.3051061784053	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 1.1670841680455	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 1.0489776563692	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.95025566230774	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.87740095878839	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.79835570995569	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.74247495220423	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.69091272251606	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.65085515473843	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.60924413268566	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.58096205244303	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.55505596709013	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.52814020651817	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.50457874693155	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.48341403104305	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.46083798635244	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.44957858628988	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.43539775047779	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.41959685134411	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.40510522945166	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.39191530995607	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.38642079803705	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.37170931105375	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.36408291218996	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.35395842438459	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.34392052089214	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.33828469476938	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.33396757560015	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.32365186531544	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.31483189263344	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.31378469856262	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.30787758008957	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.30100666034698	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.30038995398283	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.29118838137388	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.28930719283819	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.28654311967611	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.28350519685507	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.27876933116436	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.27613660802126	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.27318189865828	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.26773030429602	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.26488821339846	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.26346064607382	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.25823756268978	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.25604414771557	
+</pre></div></div><div class="output_area"><div class="prompt output_prompt">Out[9]:</div><div class="output_subarea output_text output_pyout"><pre># current error = 0.25263269651413	
+# StochasticGradient: you have reached the maximum number of iterations	
+# training error = 0.25263269651413	
+</pre></div></div></div><div title="click to expand output" class="btn output_collapsed" style="display: none;">. . .</div></div></div><div tabindex="2" class="cell border-box-sizing code_cell rendered command_mode unselected"><div class="input"><div class="prompt input_prompt">In&nbsp;[10]:</div><div class="inner_cell"><div class="ctb_hideshow ctb_show"><div class="celltoolbar"></div></div><div class="input_area"><div class="CodeMirror cm-s-ipython"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 73.6px; left: 469.6px;"><textarea tabindex="0" spellcheck="false" autocapitalize="off" autocorrect="off" wrap="off" style="position: absolute; padding: 0px; width: 1px; height: 1em; outline: medium none;"></textarea></div><div style="left: 0px;" class="CodeMirror-hscrollbar"><div style="height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div draggable="true" tabindex="-1" class="CodeMirror-scroll"><div style="min-width: 811px; margin-left: 0px; min-height: 198px;" class="CodeMirror-sizer"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: medium none;"><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1; display: none;"></div><div style="" class="CodeMirror-code"><pre>correct = 0</pre><pre>for i=1,10000 do</pre><pre>    local groundtruth = testset.labels[i]</pre><pre>    local prediction = net:forward(testset.data[i]:cuda())</pre><pre>    local confidences, indices = torch.sort(prediction, true)  -- true means sort in descending order</pre><pre>    if groundtruth == indices[1] then</pre><pre>        correct = correct + 1</pre><pre>    end</pre><pre>end</pre><pre>&nbsp;</pre><pre>print(correct, 100*correct/10000 .. ' % ')</pre></div><div style="left: 464px; top: 68px; height: 17px; visibility: hidden;" class="CodeMirror-cursor">&nbsp;</div><div style="display: none; visibility: hidden;" class="CodeMirror-cursor CodeMirror-secondarycursor">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 198px;"></div><div style="display: none; height: 198px;" class="CodeMirror-gutters"></div></div></div></div></div></div><div style="display: none;" class="widget-area"><div class="prompt"><button class="close">×</button></div><div class="widget-subarea"></div></div><div class="output_wrapper"><div title="click to scroll output; double click to hide" class="out_prompt_overlay prompt" style=""></div><div style="" class="output"><div class="output_area"><div class="prompt output_prompt">Out[10]:</div><div class="output_subarea output_text output_pyout"><pre>8292	82.92 % 	
+</pre></div></div></div><div title="click to expand output" class="btn output_collapsed" style="display: none;">. . .</div></div></div><div tabindex="2" class="cell border-box-sizing code_cell command_mode rendered unselected"><div class="input"><div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div><div class="inner_cell"><div class="ctb_hideshow ctb_show"><div class="celltoolbar"></div></div><div class="input_area"><div class="CodeMirror cm-s-ipython"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 5.59998px; left: 5.59998px;"><textarea tabindex="0" spellcheck="false" autocapitalize="off" autocorrect="off" wrap="off" style="position: absolute; padding: 0px; width: 1px; height: 1em; outline: medium none;"></textarea></div><div style="left: 0px;" class="CodeMirror-hscrollbar"><div style="height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div draggable="true" tabindex="-1" class="CodeMirror-scroll"><div style="min-width: 11px; margin-left: 0px; min-height: 28px;" class="CodeMirror-sizer"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: medium none;"><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1; display: none;"></div><div style="" class="CodeMirror-code"><pre>&nbsp;</pre></div><div style="left: 0px; top: 0px; height: 17px;" class="CodeMirror-cursor">&nbsp;</div><div style="display: none;" class="CodeMirror-cursor CodeMirror-secondarycursor">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 28px;"></div><div style="display: none; height: 28px;" class="CodeMirror-gutters"></div></div></div></div></div></div><div style="display: none;" class="widget-area"><div class="prompt"><button class="close">×</button></div><div class="widget-subarea"></div></div><div class="output_wrapper"><div title="click to scroll output; double click to hide" class="out_prompt_overlay prompt" style=""></div><div style="" class="output"></div><div title="click to expand output" class="btn output_collapsed" style="display: none;">. . .</div></div></div><div class="end_space"></div></div></div>
+        <div title="Click to Show/Hide pager area, drag to Resize" class="ui-draggable border-box-sizing ui-widget ui-state-default" id="pager_splitter"></div>
+        <div style="height: 347.6px;" class="border-box-sizing" id="pager">
+            <div id="pager_button_area">
+            <a style="position: absolute; right: 20px;" class="ui-button" title="Open the pager in an external window" role="button"><span class="ui-icon ui-icon-extlink"></span></a><a style="position: absolute; right: 5px;" class="ui-button" title="Close the pager" role="button"><span class="ui-icon ui-icon-close"></span></a></div>
+            <div id="pager-container" class="container border-box-sizing"></div>
+        </div>
+    </div>
+
+</div>
+<div id="tooltip" class="ipython_tooltip" style="display:none"><div class="tooltipbuttons"><a class="ui-button" role="button" href="#"><span class="ui-icon ui-icon-close">Close</span></a><a title="Grow the tooltip vertically (press shift-tab twice)" id="expanbutton" role="button" class="ui-corner-all" href="#"><span class="ui-icon ui-icon-plus">Expand</span></a><a title="show the current docstring in pager (press shift-tab 4 times)" class="ui-button" role="button" href="#"><span class="ui-icon ui-icon-arrowstop-l-n">Open in Pager</span></a><a style="display: none;" title="Tootip is not dismissed while typing for 10 seconds" class="ui-button" role="button" href="#"><span class="ui-icon ui-icon-clock">Close</span></a></div><div class="pretooltiparrow"></div><div class="tooltiptext smalltooltip"></div></div>
+
+
+
+</div>
+
+<script src="ELTENEIN_5_files/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/namespace.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/page.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/loginwidget.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+
+
+
+<script src="ELTENEIN_5_files/html-css-sanitizer-minified.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/codemirror.js" charset="utf-8"></script>
+<script type="text/javascript">
+    CodeMirror.modeURL = "/static/components/codemirror/mode/%N/%N.js";
+</script>
+<script src="ELTENEIN_5_files/loadmode.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/multiplex.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/overlay.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/matchbrackets.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/closebrackets.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/comment.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/htmlmixed.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/xml.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/javascript.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/css.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/rst.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/markdown.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/gfm.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/python.js" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/codemirror-ipython.js" charset="utf-8"></script>
+
+<script src="ELTENEIN_5_files/highlight.js" charset="utf-8"></script>
+
+<script src="ELTENEIN_5_files/date.js" charset="utf-8"></script>
+
+<script src="ELTENEIN_5_files/events.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/utils.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/keyboard.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/security.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/dialog.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/kernel.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/comm.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/session.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/layoutmanager.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/mathjaxutils.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/outputarea.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/cell.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/celltoolbar.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/codecell.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/completer.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/textcell.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/savewidget.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/quickhelp.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/pager.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/menubar.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/toolbar.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/maintoolbar.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/notebook.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/keyboardmanager.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/notificationwidget.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/notificationarea.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/tooltip.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/tour.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="ELTENEIN_5_files/config.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/main.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="ELTENEIN_5_files/contexthint.js" charset="utf-8"></script>
+
+<script src="ELTENEIN_5_files/default.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/rawcell.js" type="text/javascript" charset="utf-8"></script>
+<script src="ELTENEIN_5_files/slideshow.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+<script src="ELTENEIN_5_files/custom.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+<div style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px none; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-size-adjust: none; font-family: 'MathJax_Size4',sans-serif;" id="MathJax_Font_Test"></div></body></html>
