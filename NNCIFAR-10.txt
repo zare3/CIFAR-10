@@ -1,0 +1,204 @@
+# StochasticGradient: training	
+
+Out[9]:
+
+# current error = 2.0551297489071	
+
+Out[9]:
+
+# current error = 1.6998780136299	
+
+Out[9]:
+
+# current error = 1.4906787215233	
+
+Out[9]:
+
+# current error = 1.3207121212482	
+
+Out[9]:
+
+# current error = 1.1692218435979	
+
+Out[9]:
+
+# current error = 1.0496990241051	
+
+Out[9]:
+
+# current error = 0.9554172770834	
+
+Out[9]:
+
+# current error = 0.87547419064522	
+
+Out[9]:
+
+# current error = 0.80969870152473	
+
+Out[9]:
+
+# current error = 0.75162262686729	
+
+Out[9]:
+
+# current error = 0.7007424091053	
+
+Out[9]:
+
+# current error = 0.65661264126539	
+
+Out[9]:
+
+# current error = 0.62034100138903	
+
+Out[9]:
+
+# current error = 0.58492644386768	
+
+Out[9]:
+
+# current error = 0.55379008782387	
+
+Out[9]:
+
+# current error = 0.5281907020092	
+
+Out[9]:
+
+# current error = 0.50371175079346	
+
+Out[9]:
+
+# current error = 0.48912610562563	
+
+Out[9]:
+
+# current error = 0.46587166535377	
+
+Out[9]:
+
+# current error = 0.45342357229471	
+
+Out[9]:
+
+# current error = 0.43657626747847	
+
+Out[9]:
+
+# current error = 0.41923881889105	
+
+Out[9]:
+
+# current error = 0.41033677063942	
+
+Out[9]:
+
+# current error = 0.39576970620394	
+
+Out[9]:
+
+# current error = 0.38285710394859	
+
+Out[9]:
+
+# current error = 0.36870023170948	
+
+Out[9]:
+
+# current error = 0.3671353381753	
+
+Out[9]:
+
+# current error = 0.35681966423512	
+
+Out[9]:
+
+# current error = 0.34589072736263	
+
+Out[9]:
+
+# current error = 0.33407990173817	
+
+Out[9]:
+
+# current error = 0.32883598912001	
+
+Out[9]:
+
+# current error = 0.32792854537964	
+
+Out[9]:
+
+# current error = 0.31932855693817	
+
+Out[9]:
+
+# current error = 0.30979744141579	
+
+Out[9]:
+
+# current error = 0.30976775336504	
+
+Out[9]:
+
+# current error = 0.30397909812927	
+
+Out[9]:
+
+# current error = 0.29396159749985	
+
+Out[9]:
+
+# current error = 0.29056170874357	
+
+Out[9]:
+
+# current error = 0.28933421620131	
+
+Out[9]:
+
+# current error = 0.28763264255047	
+
+Out[9]:
+
+# current error = 0.27931152355909	
+
+Out[9]:
+
+# current error = 0.27486395164967	
+
+Out[9]:
+
+# current error = 0.27229468025923	
+
+Out[9]:
+
+# current error = 0.2680239943099	
+
+Out[9]:
+
+# current error = 0.26250186056376	
+
+Out[9]:
+
+# current error = 0.26030043036938	
+
+Out[9]:
+
+# current error = 0.25670832597256	
+
+Out[9]:
+
+# current error = 0.25180507398605	
+
+Out[9]:
+
+# current error = 0.25228630817175	
+
+Out[9]:
+
+# current error = 0.25089381420374	
+# StochasticGradient: you have reached the maximum number of iterations	
+# training error = 0.25089381420374	
+
